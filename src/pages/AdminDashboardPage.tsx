@@ -1,4 +1,3 @@
-```tsx
 import React, { useEffect, useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -56,7 +55,7 @@ const AdminDashboardPage = () => {
         <CardTitle className="text-sm font-medium text-muted-foreground">
           {title}
         </CardTitle>
-        <Icon className={\`h-4 w-4 ${color}`} />
+        <Icon className={`h-4 w-4 ${color}`} />
       </CardHeader>
       <CardContent>
         <div className="text-2xl font-bold">{value}</div>
@@ -89,7 +88,7 @@ const AdminDashboardPage = () => {
         />
         <StatCard
           title="Total Revenue"
-          value={\`€${stats.revenue.toFixed(2)}`}
+          value={`€${stats.revenue.toFixed(2)}`}
           icon={Activity}
           color="text-orange-600"
         />
@@ -101,4 +100,3 @@ const AdminDashboardPage = () => {
 };
 
 export default AdminDashboardPage;
-```
