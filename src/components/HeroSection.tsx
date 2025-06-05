@@ -3,7 +3,6 @@ import { Badge } from "@/components/ui/badge";
 import { motion } from "motion/react";
 import { Play, ArrowRight, Smartphone, Zap, Globe } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import Scene3D from "./Scene3D";
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -17,8 +16,6 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
-      <Scene3D />
-      
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
