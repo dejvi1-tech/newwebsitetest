@@ -9,17 +9,22 @@ const HeroSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 z-0 opacity-10"
-        style={{
-          backgroundImage: "url('https://images.pexels.com/photos/2007401/pexels-photo-2007401.jpeg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat"
-        }}
-      />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0 opacity-30"
+          style={{
+            backgroundImage: "url('https://images.pexels.com/photos/2007401/pexels-photo-2007401.jpeg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat"
+          }}
+        />
+        <div 
+          className="absolute inset-0 bg-gradient-to-br from-blue-50/90 via-indigo-50/90 to-purple-50/90"
+        />
+      </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -42,7 +47,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-6xl md:text-8xl font-black mb-8 leading-tight backdrop-blur-sm">
+            className="text-6xl md:text-8xl font-black mb-8 leading-tight">
             <span className="bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent">
               Qëndro i Lidhur
             </span>
@@ -56,8 +61,8 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed max-w-4xl mx-auto backdrop-blur-sm">
-            Merr lidhjen e të dhënave menjëherë në <span className="font-bold text-blue-600">200+ vende</span> me planet tona premium eSIM. 
+            className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-4xl mx-auto">
+            Merr lidhjen e të dhënave menjëherë në <span className="font-bold text-blue-700">200+ vende</span> me planet tona premium eSIM. 
             <br className="hidden md:block" />
             Pa karta SIM fizike, pa tarifa roaming, pa telashe. <span className="font-semibold">Vetëm lidhje e qetë.</span>
           </motion.p>
