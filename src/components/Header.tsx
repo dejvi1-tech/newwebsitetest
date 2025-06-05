@@ -14,7 +14,7 @@ const Header = () => {
   const navigationItems = [
     { name: language === 'al' ? 'Paketat' : 'Packages', href: '/packages' },
     { name: language === 'al' ? 'Si Funksionon' : 'How It Works', href: '/how-it-works' },
-    { name: language === 'al' ? 'Recensionet' : 'Reviews', href: '/reviews' },
+    { name: language === 'al' ? 'Rreth Nesh' : 'About Us', href: '/about' },
     { name: language === 'al' ? 'Mbështetja' : 'Support', href: '/support' }
   ];
 

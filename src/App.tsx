@@ -6,7 +6,7 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import HomePage from "./pages/HomePage";
 import PackagesPage from "./pages/PackagesPage";
 import HowItWorksPage from "./pages/HowItWorksPage";
-import ReviewsPage from "./pages/ReviewsPage";
+import AboutUsPage from "./pages/AboutUsPage";
 import SupportPage from "./pages/SupportPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import NotFound from "./pages/NotFound";
@@ -25,7 +25,7 @@ const App = () => (
               <Route path="/" element={<HomePage />} />
               <Route path="/packages" element={<PackagesPage />} />
               <Route path="/how-it-works" element={<HowItWorksPage />} />
-              <Route path="/reviews" element={<ReviewsPage />} />
+              <Route path="/about" element={<AboutUsPage />} />
               <Route path="/support" element={<SupportPage />} />
               <Route path="/checkout" element={<CheckoutPage />} />
               <Route path="*" element={<NotFound />} />
