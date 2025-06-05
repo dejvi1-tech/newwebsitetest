@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "motion/react";
-import { Play, ArrowRight, Smartphone, Zap, Globe } from "lucide-react";
+import { Play, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 
@@ -22,7 +22,7 @@ const HeroSection = () => {
           }}
         />
         <div 
-          className="absolute inset-0 bg-gradient-to-br from-blue-50/90 via-indigo-50/90 to-purple-50/90"
+          className="absolute inset-0 bg-gradient-to-br from-blue-600/80 via-indigo-600/60 to-purple-600/50"
         />
       </div>
 
@@ -38,8 +38,8 @@ const HeroSection = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
             className="mb-8">
-            <Badge className="mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white px-8 py-3 text-base font-medium rounded-full shadow-lg animate-pulse">
-              🌍 I besuar nga 5M+ udhëtarë në botë
+            <Badge className="mb-6 bg-white/20 text-white px-8 py-3 text-base font-medium rounded-full shadow-lg animate-pulse">
+              🌍 {t('hero_badge')}
             </Badge>
           </motion.div>
           
@@ -47,24 +47,18 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-6xl md:text-8xl font-black mb-8 leading-tight">
-            <span className="bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent">
-              Qëndro i Lidhur
-            </span>
+            className="text-6xl md:text-8xl font-black mb-8 leading-tight text-white">
+            {t('hero_title_1')}
             <br />
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Kudo
-            </span>
+            {t('hero_title_2')}
           </motion.h1>
           
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-4xl mx-auto">
-            Merr lidhjen e të dhënave menjëherë në <span className="font-bold text-blue-700">200+ vende</span> me planet tona premium eSIM. 
-            <br className="hidden md:block" />
-            Pa karta SIM fizike, pa tarifa roaming, pa telashe. <span className="font-semibold">Vetëm lidhje e qetë.</span>
+            className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed max-w-4xl mx-auto">
+            {t('hero_description')}
           </motion.p>
           
           <motion.div
@@ -75,7 +69,7 @@ const HeroSection = () => {
             <Link to="/packages">
               <Button
                 size="lg"
-                className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-5 text-xl font-bold rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
+                className="group bg-white hover:bg-white/90 text-blue-600 px-10 py-5 text-xl font-bold rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
                 {t('hero_cta_main')}
                 <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -84,9 +78,9 @@ const HeroSection = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="group border-2 border-gray-300 hover:border-blue-600 hover:bg-blue-50 px-10 py-5 text-xl font-semibold rounded-full transition-all duration-300">
+                className="group border-2 border-white/50 text-white hover:bg-white/10 px-10 py-5 text-xl font-semibold rounded-full transition-all duration-300">
                 <Play className="mr-3 w-6 h-6 group-hover:scale-110 transition-transform" />
-                Si Funksionon
+                {t('how_it_works')}
               </Button>
             </Link>
           </motion.div>
