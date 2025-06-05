@@ -3,19 +3,24 @@ import { Badge } from "@/components/ui/badge";
 import { motion } from "motion/react";
 import { Play, ArrowRight, Smartphone, Zap, Globe } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const { t } = useLanguage();
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 z-0 opacity-10"
+        style={{
+          backgroundImage: "url('https://images.pexels.com/photos/2007401/pexels-photo-2007401.jpeg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat"
+        }}
+      />
+
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -62,21 +67,23 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.6 }}
             className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-            <Button
-              onClick={() => scrollToSection('country-packages')}
-              size="lg"
-              className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-5 text-xl font-bold rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
-              {t('hero_cta_main')}
-              <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button
-              onClick={() => scrollToSection('how-it-works')}
-              variant="outline"
-              size="lg"
-              className="group border-2 border-gray-300 hover:border-blue-600 hover:bg-blue-50 px-10 py-5 text-xl font-semibold rounded-full transition-all duration-300">
-              <Play className="mr-3 w-6 h-6 group-hover:scale-110 transition-transform" />
-              Si Funksionon
-            </Button>
+            <Link to="/packages">
+              <Button
+                size="lg"
+                className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-5 text-xl font-bold rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
+                {t('hero_cta_main')}
+                <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
+            <Link to="/how-it-works">
+              <Button
+                variant="outline"
+                size="lg"
+                className="group border-2 border-gray-300 hover:border-blue-600 hover:bg-blue-50 px-10 py-5 text-xl font-semibold rounded-full transition-all duration-300">
+                <Play className="mr-3 w-6 h-6 group-hover:scale-110 transition-transform" />
+                Si Funksionon
+              </Button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>
